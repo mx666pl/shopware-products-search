@@ -29,8 +29,8 @@ onUnmounted(() => {
 <template>
   <div class="search-form d-flex justify-content-center align-items-center">
     <div class="form-floating w-50">
-      <input type="text" id="search" class="form-control" placeholder="Szukaj..." :value="modelValue"
-        @input="handleInput">
+      <input type="text" id="search" class="form-control" placeholder="Szukaj..." :value="modelValue" @input="handleInput"
+        maxlength="100">
       <label for="search">Szukaj...</label>
     </div>
   </div>
