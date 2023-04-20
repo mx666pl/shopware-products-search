@@ -2,7 +2,7 @@
 import { SortOption } from '../types';
 
 defineProps<{ modelValue: string; options: SortOption[] }>();
-defineEmits<{ (e: "update:modelValue", query: string): void }>();
+defineEmits<{ (e: 'update:modelValue', query: string): void }>();
 </script>
 
 <template>

@@ -4,7 +4,7 @@ export async function request<T>(
 ): Promise<T> {
   const url = import.meta.env.VITE_API_URL;
   const headers = new Headers({
-    "sw-access-key": import.meta.env.VITE_SW_ACCESS_KEY
+    'sw-access-key': import.meta.env.VITE_SW_ACCESS_KEY
   });
 
   const params = new URLSearchParams({
@@ -12,7 +12,7 @@ export async function request<T>(
   });
 
   const response = await fetch(`${url}${endpoint}`, {
-    method: "POST",
+    method: 'POST',
     body: params,
     headers
   });

@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { ref, watchEffect } from "vue";
+import { ref, watchEffect } from 'vue';
 import ProductsSearchForm from './components/ProductsSearchForm.vue';
-import ProductsSort from "./components/ProductsSort.vue";
-import ProductsList from "./components/ProductsList.vue";
-import type { Product, SortOption } from "./types";
-import { request } from "./api";
+import ProductsSort from './components/ProductsSort.vue';
+import ProductsList from './components/ProductsList.vue';
+import type { Product, SortOption } from './types';
+import { request } from './api';
 
 const ENDPOINTS = {
   search: '/search',
@@ -26,13 +26,13 @@ const products = ref<Product[]>([]);
 watchEffect(() => { getProducts() });
 
 async function getProducts() {
-  const searchParams = { page: "1", limit: "30", order: sortDirection.value };
+  const searchParams = { page: '1', limit: '30', order: sortDirection.value };
 
   try {
     if (!searchQuery.value) {
-      products.value = await request<Product[]>(ENDPOINTS["default"], searchParams);
+      products.value = await request<Product[]>(ENDPOINTS['default'], searchParams);
     } else {
-      products.value = await request<Product[]>(ENDPOINTS["search"], {
+      products.value = await request<Product[]>(ENDPOINTS['search'], {
         search: searchQuery.value,
         ...searchParams
       });
